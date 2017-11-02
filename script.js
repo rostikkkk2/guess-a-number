@@ -1,10 +1,12 @@
 var rand_num = Math.floor(Math.random() * 100);
 console.log(rand_num);
 
-var i = 0;
+var ask;
+
+var flag = false;
 var number_of_attempts = 1;
-while (i == 0){
-  var ask = +prompt("введите число от 1 до 100");
+while (flag == false){
+  ask = +prompt("введите число от 1 до 100");
   if(ask > rand_num){
     alert("вы ввели больше число чем загаданное");
     number_of_attempts++;
@@ -16,6 +18,6 @@ while (i == 0){
   }else if (ask == rand_num){
     alert("вы отгадали заданное число c " + number_of_attempts + " раза");
     number_of_attempts++;
-    i = 1;
+    flag = true;
   }
 }
